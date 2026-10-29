@@ -1,17 +1,39 @@
-# Kawasaki Z1000 — модель и аэродинамика
+# Kawasaki Z1000 — Airflow & Exhaust
 
-[Открыть симуляцию](https://swcake1.github.io/z1000-airflow/) · [Посмотреть и скачать 3D-модель](https://swcake1.github.io/z1000-airflow/motorcycle.html)
+A 3D model of a 2008 Kawasaki Z1000, reconstructed from photos, with an interactive view of airflow and exhaust around the motorcycle, rider and passenger.
 
-Две статические страницы для просмотра и обмена ссылкой:
+**[Open the simulation](https://swcake1.github.io/z1000-airflow/)** · [Explore the motorcycle in 3D](https://swcake1.github.io/z1000-airflow/motorcycle.html)
 
-- **Главная → `simulation/`:** «Воздух и выхлоп» — мотоцикл с водителем и пассажиркой, потоки воздуха и выхлопа. По умолчанию: 60 км/ч, кофр с площадкой и дугами, оба потока включены. Скорости 30, 40, 50, 60, 70 и 80 км/ч; три кнопки переключают кофр с креплением, только площадку и дуги, отсутствие всего комплекта. Сцену с людьми также можно скачать.
-- **`motorcycle.html`:** дополнительный просмотр вращаемой фотомодели Kawasaki Z1000 2008 с оригинальным нештатным выхлопом и кофром Givi V47. Скачивание GLB и USDZ.
+![Simulation showing two riders, a rear top case, blue airflow lines and orange exhaust trails](docs/simulation.png)
 
-Просмотр использует готовые расчёты. Blender, OpenFOAM и сервер вычислений посетителю не нужны.
+## Why this project exists
 
-## Локальный запуск
+The starting point was an exhaust smell on the passenger's clothing around the lower back after some rides. Could the rear top case change the airflow and carry exhaust from the mufflers back toward the passenger?
 
-Нужны Node.js 22+ и Python 3. Из корня проекта:
+This project was built to explore that idea: recreate the actual motorcycle, add both riders, and compare what happens when the luggage setup changes.
+
+## What you can explore
+
+Rotate and zoom the scene, show or hide airflow and exhaust, and compare speeds from **30 to 80 km/h** in three configurations:
+
+- Top case with its mounting platform and support rails.
+- Platform and support rails only.
+- No top case, platform or support rails.
+
+The viewer uses 18 precomputed scenarios, so no simulation software is needed to open it. The results are exploratory and have not been validated against measurements on the real motorcycle.
+
+## Download the models
+
+| Model | View on a Mac | Use in a 3D editor |
+| --- | --- | --- |
+| Motorcycle | [Download USDZ](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.usdz) | [Download GLB](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.glb) |
+| Motorcycle with both riders | [Download USDZ](https://swcake1.github.io/z1000-airflow/simulation/z1000-two-riders.usdz) | [Download GLB](https://swcake1.github.io/z1000-airflow/simulation/assets/riding.glb) |
+
+On a Mac, download a **USDZ** file, select it in Finder and press **Space** to open Quick Look. Textures are included in all model files.
+
+## Run locally
+
+Install **Node.js 22+** and **Python 3**, then run these commands from the project folder:
 
 ```sh
 npm run setup
@@ -19,59 +41,15 @@ npm run build
 npm run preview
 ```
 
-Открыть [http://127.0.0.1:8767/](http://127.0.0.1:8767/).
-Сборка в `dist/` содержит только файлы, перечисленные в `scripts/build-site.mjs`.
-Она проверяет наличие всех 18 результатов и ограничение размера файлов.
+Open [http://127.0.0.1:8767/](http://127.0.0.1:8767/).
 
-## GitHub Pages
+## Key files
 
-Репозиторий: [SwCake1/z1000-airflow](https://github.com/SwCake1/z1000-airflow).
-Публикация настроена через GitHub Actions. Каждый push в `main` автоматически собирает и обновляет сайт:
-[swcake1.github.io/z1000-airflow](https://swcake1.github.io/z1000-airflow/).
+- `models/v2/` — motorcycle models in GLB and USDZ formats.
+- `simulation/assets/riding.glb` and `simulation/z1000-two-riders.usdz` — the scene with both riders.
+- `simulation/results/` — saved airflow and exhaust results for all 18 scenarios.
+- `simulation/index.html` — the interactive simulation page.
 
-Статус публикации доступен в [Actions](https://github.com/SwCake1/z1000-airflow/actions/workflows/pages.yml).
-Для повторного запуска: **Publish model and simulation → Run workflow**.
+Original photographs, Blender source files and working calculation files stay local and are not included in this repository.
 
-При переносе в другой репозиторий в **Settings → Pages → Build and deployment → Source** нужно выбрать **GitHub Actions** и запустить workflow.
-
-Все ресурсы используют относительные пути: сайт работает и в корне домена, и внутри пути репозитория. Произвольное имя репозитория допустимо.
-
-На GitHub Free Pages публикуется из публичного репозитория. Для приватного исходного репозитория требуется подходящий платный план; обычный сайт Pages всё равно публично доступен.
-См. [настройку Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
-
-## Что хранится в Git
-
-- Код двух страниц, фиксированная версия Three.js в `simulation/package-lock.json`, сборка и workflow публикации.
-- Готовая модель мотоцикла и сцена с людьми в GLB/USDZ.
-- 18 результатов расчётов и параметры модели.
-- Описание ограничений и лицензии сторонних материалов.
-
-Фотографии в `Photo/`, Blender-исходники, сырые расчёты OpenFOAM, рабочие скрипты реконструкции, промежуточные файлы, `node_modules/` и `dist/` исключены из Git. `.gitignore` использует явный список разрешённых файлов: новые рабочие папки не попадут в коммит автоматически.
-Исходные фотографии сохраняются локально. Фотографические текстуры входят в готовые модели.
-
-Все публикуемые файлы меньше 100 MiB; Git LFS не используется. Размер сайта ниже лимита Pages в 1 GiB.
-См. [ограничения Git](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits) и [Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
-
-## Как читать результаты
-
-Переключение скорости выбирает отдельный заранее рассчитанный сценарий.
-Синие линии показывают средние траектории воздуха, оранжевые — выхлопа.
-Облако показывает примесь, а число возле поясницы — её среднюю массовую долю в воздухе выбранной области.
-
-В этой предварительной модели с кофром доля примеси возле поясницы ниже на всех шести скоростях. Это не подтверждённый экспериментом вывод о реальном мотоцикле.
-
-Расчёт: OpenFOAM Foundation 14, стационарный RANS k-omega SST, нагрев и перенос пассивной примеси. Условный выхлоп — 500 K и суммарно 20 г/с, одинаковый для всех скоростей. Бокового ветра нет, колёса не вращаются. Проверены сходимость, качество сетки и баланс примеси; независимость от сетки и соответствие измерениям пока не установлены.
-
-Геометрия и посадка приближённые. Модель не оценивает запах и накопление на ткани. Подробности: [описание расчёта](simulation/README.txt).
-
-## Форматы
-
-| Файл | Назначение |
-|---|---|
-| `models/v2/kawasaki-z1000-2008-refined.glb` | Мотоцикл без людей, текстуры внутри |
-| `models/v2/kawasaki-z1000-2008-refined.usdz` | Та же модель для просмотра на устройствах Apple |
-| `simulation/assets/riding.glb` | Вертикальный мотоцикл с водителем и пассажиркой |
-| `simulation/z1000-two-riders.usdz` | Сцена с людьми для устройств Apple |
-
-GLB/USDZ — готовые экспортированные модели. Рабочие Blender-исходники остаются локально.
-[Сторонние материалы и лицензии](THIRD_PARTY_NOTICES.md).
+[Third-party materials and licenses](THIRD_PARTY_NOTICES.md)

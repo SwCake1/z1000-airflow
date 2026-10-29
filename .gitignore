@@ -12,6 +12,10 @@
 !/scripts/
 !/models/
 !/simulation/
+!/docs/
+
+/docs/*
+!/docs/simulation.png
 
 /.github/*
 !/.github/workflows/
