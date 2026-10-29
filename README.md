@@ -1,5 +1,7 @@
 # Kawasaki Z1000 — модель и аэродинамика
 
+[Открыть симуляцию](https://swcake1.github.io/z1000-airflow/) · [Посмотреть и скачать 3D-модель](https://swcake1.github.io/z1000-airflow/motorcycle.html)
+
 Две статические страницы для просмотра и обмена ссылкой:
 
 - **Главная → `simulation/`:** «Воздух и выхлоп» — мотоцикл с водителем и пассажиркой, потоки воздуха и выхлопа. По умолчанию: 60 км/ч, кофр с площадкой и дугами, оба потока включены. Скорости 30, 40, 50, 60, 70 и 80 км/ч; три кнопки переключают кофр с креплением, только площадку и дуги, отсутствие всего комплекта. Сцену с людьми также можно скачать.
@@ -23,10 +25,14 @@ npm run preview
 
 ## GitHub Pages
 
-1. Создать пустой репозиторий на GitHub и отправить в него ветку `main` этого проекта.
-2. В **Settings → Pages → Build and deployment → Source** выбрать **GitHub Actions**.
-3. Во вкладке **Actions** запустить **Publish model and simulation → Run workflow**. Последующие отправки в `main` запускают публикацию автоматически.
-4. Готовая ссылка появится в окружении `github-pages` и в настройках Pages. Адрес проекта имеет вид `https://<account>.github.io/<repository>/`.
+Репозиторий: [SwCake1/z1000-airflow](https://github.com/SwCake1/z1000-airflow).
+Публикация настроена через GitHub Actions. Каждый push в `main` автоматически собирает и обновляет сайт:
+[swcake1.github.io/z1000-airflow](https://swcake1.github.io/z1000-airflow/).
+
+Статус публикации доступен в [Actions](https://github.com/SwCake1/z1000-airflow/actions/workflows/pages.yml).
+Для повторного запуска: **Publish model and simulation → Run workflow**.
+
+При переносе в другой репозиторий в **Settings → Pages → Build and deployment → Source** нужно выбрать **GitHub Actions** и запустить workflow.
 
 Все ресурсы используют относительные пути: сайт работает и в корне домена, и внутри пути репозитория. Произвольное имя репозитория допустимо.
 
