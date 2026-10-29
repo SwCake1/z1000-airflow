@@ -1,0 +1,56 @@
+{
+  "model": "Kawasaki Z1000 2008, aftermarket dual exhaust, Givi V47",
+  "revision": "2.1 — original photo exhaust restored",
+  "supplied_photos": 36,
+  "aligned_cameras": 33,
+  "mesh_objects": 10,
+  "triangles": 251794,
+  "texture_resolution": [
+    8192,
+    8192
+  ],
+  "units": "metres",
+  "axes_blend": "X forward, Y left, Z up",
+  "axes_glb": "glTF Y up",
+  "wheelbase_constraint_m": 1.445,
+  "wheelbase_accuracy": "Scale inferred from approximate axle centres in the scan; not measured ground truth",
+  "topcase_local_dimensions_m": {
+    "width": 0.59,
+    "depth": 0.45,
+    "height": 0.32
+  },
+  "topcase_identification": "V47 MONOKEY marking visible in IMG_0415; user initially called it K47",
+  "exhaust": {
+    "brand": "unknown aftermarket",
+    "source": "Original photogrammetry geometry and texture restored from SCAN_raw_original; all 22 generated exhaust components removed",
+    "status": "Dimensions not measured; no assumed outlet diameter"
+  },
+  "pose": "parked on side stand, original lean retained",
+  "riders_included": false,
+  "cfd_ready": false,
+  "remaining_limits": [
+    "Residual photogrammetry distortion on glossy and dark surfaces",
+    "Garage lighting remains baked into the photographic texture",
+    "Open mesh boundaries and overlapping parts require a separate CFD surface preparation"
+  ],
+  "sources": [
+    "https://www.kawasaki.cz/cs/products/archive/Sport/2008/Z1000/overview?Uid=05F6WlhZXFhZWV5ZW1pcWlxRXlxaW1hZRgsbRSsy",
+    "https://media.givi.it/XN-Prodotti/icone_caratteristiche/SIZES-V47.jpg"
+  ],
+  "validation": {
+    "glb_header_valid": true,
+    "only_motorcycle_exported": true,
+    "textures_embedded": true,
+    "triangle_count_matches_blender": true,
+    "visual_checks": [
+      "front three-quarter",
+      "left",
+      "right",
+      "rear",
+      "untextured surface",
+      "same-camera comparison with v1"
+    ],
+    "original_photo_exhaust_visually_checked_both_sides": true,
+    "usdz_archive_crc_valid": true
+  }
+}

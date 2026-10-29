@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Z1000 · Воздух и выхлоп</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="project.css">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<main>
+ <section class="view" aria-label="Интерактивная модель мотоцикла">
+  <div class="title"><span class="eyebrow">KAWASAKI Z1000 · 2008</span><h1>Воздух и выхлоп</h1><p>Мотоцикл, водитель и пассажирка</p></div>
+  <div id="canvas"></div>
+  <div id="loading" role="status">Загружаю модель…</div>
+  <div class="view-controls"><button data-view="overview">Общий вид</button><button data-view="side">Сбоку</button><button data-view="rear">Сзади</button><button data-view="flow">Обтекание</button></div>
+  <div class="view-note">Потяни, чтобы вращать · прокрути, чтобы приблизить</div>
+ </section>
+ <aside>
+  <nav class="page-nav" aria-label="Раздел проекта"><a href="../">Мотоцикл</a><a href="./" aria-current="page">Воздух и выхлоп</a></nav>
+  <div class="section"><span class="eyebrow">СЦЕНАРИЙ</span><div class="speed"><strong id="speed-value">60</strong><span>км/ч</span></div>
+   <div id="speeds" class="speeds" role="group" aria-label="Скорость движения"></div>
+   <label class="luggage-label" for="luggage">Багажная система</label>
+   <select id="luggage"><option value="with">Кофр с площадкой и дугами</option><option value="rack">Только площадка и дуги</option><option value="without">Без кофра и крепления</option></select>
+   <p class="small">Прямолинейное движение · без бокового ветра</p>
+  </div>
+  <div class="section"><span class="eyebrow">ОТОБРАЖЕНИЕ</span>
+   <label class="toggle"><span><i class="dot air"></i>Поток воздуха</span><input id="air" type="checkbox" checked disabled></label>
+   <label class="toggle"><span><i class="dot exhaust"></i>Выхлопные газы</span><input id="exhaust" type="checkbox" checked disabled></label>
+   <label class="toggle"><span>Зона поясницы</span><input id="lumbar" type="checkbox"></label>
+   <label class="toggle"><span>Анимация потока</span><input id="animate" type="checkbox" checked disabled></label>
+   <p class="small">Линии — средние траектории. Оранжевое облако — примесь выхлопа; темнее означает больше примеси.</p>
+  </div>
+  <div class="section result"><span class="eyebrow">В ЗОНЕ ПОЯСНИЦЫ</span><div id="concentration">—</div><p id="result-description">Доля выхлопа появится после расчёта.</p><div id="status" role="status">Подготовка расчёта</div><p id="progress" class="small"></p></div>
+  <details><summary>Условия и точность</summary><div id="assumptions"><p>Водитель: 185 см, 80 кг, мужское спортивное телосложение. Пассажирка: 164 см, 47 кг. Пропорции и одежда приближённые.</p><p>Воздух 20 °C. Выхлоп: условно 227 °C и суммарно 20 г/с, поровну из двух труб. Это допущения, а не замеры. Во всех скоростных сценариях расход одинаковый.</p><p>OpenFOAM рассчитывает средний поток, нагрев и перенос примеси. Анимация показывает движение в этом поле; пульсации вихрей и работа двигателя по тактам не воспроизводятся.</p><p>Дорога движется относительно мотоцикла. Колёса в предварительном расчёте не вращаются. Геометрия упрощена, точность результатов ещё не подтверждена.</p><p>Модель не определяет интенсивность запаха или безопасность воздействия. Доля примеси — массовая, усреднённая по воздуху в выбранной зоне.</p></div></details>
+  <details><summary>Скачать сцену с людьми</summary><a class="download-link" href="assets/riding.glb" download>GLB <span>20 МБ</span></a><a class="download-link" href="z1000-two-riders.usdz" download>USDZ <span>89 МБ</span></a></details>
+  <div class="footer">Готовые расчёты OpenFOAM · просмотр в браузере</div>
+ </aside>
+</main><script type="module" src="app.js"></script></body></html>

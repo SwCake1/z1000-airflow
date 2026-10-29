@@ -1,0 +1,6 @@
+* text=auto
+*.glb binary
+*.usdz binary
+simulation/results/*_with.json -diff
+simulation/results/*_without.json -diff
+simulation/results/*_rack.json -diff

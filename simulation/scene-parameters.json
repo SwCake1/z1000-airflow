@@ -1,0 +1,73 @@
+{
+  "speeds_kmh": [
+    30,
+    40,
+    50,
+    60,
+    70,
+    80
+  ],
+  "cases": [
+    "with_topcase",
+    "rack_only",
+    "without_topcase"
+  ],
+  "driver": {
+    "height_m": 1.85,
+    "weight_kg": 80,
+    "body_shape": "adult male, athletic, moderate muscle definition"
+  },
+  "passenger": {
+    "height_m": 1.64,
+    "weight_kg": 47
+  },
+  "pose_status": "Owner-approved seating; driver elbows lowered and brought inward as requested",
+  "body_shape": "approximate clothed mannequins",
+  "parked_to_riding_matrix": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0.9788036942481995,
+      -0.2048008143901825,
+      0.20085212588310242
+    ],
+    [
+      0,
+      0.2048008143901825,
+      0.9788036942481995,
+      0.01998749189078808
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "exhaust_source": "Original photographic geometry retained",
+  "flow_status": "All 18 scenarios ready: case with rack, rack only, no luggage assembly",
+  "assumptions": {
+    "crosswind_m_s": 0,
+    "exhaust_temperature_K": 500,
+    "exhaust_mass_flow_kg_s": 0.02,
+    "ambient_temperature_K": 293.15,
+    "rotating_wheels": false,
+    "unsteady_vortex_fluctuations": false
+  },
+  "visual_status": "Anatomical MakeHuman-based clothing, gloves, boots and full-face helmets",
+  "asset_licenses": [
+    {
+      "asset": "MakeHuman core base/helper mesh and weights",
+      "license": "CC0",
+      "source": "https://www.makehumancommunity.org/about/license.html"
+    }
+  ],
+  "model_revision": "male-athletic-v2",
+  "appearance_revision": "black-jacket-full-luggage-toggle-v1",
+  "luggage_toggle": "Three states: case with platform and rails; platform and rails only; no luggage assembly"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "z1000-airflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "npm ci --prefix simulation",
+    "build": "node scripts/build-site.mjs",
+    "preview": "python3 -m http.server 8767 --bind 127.0.0.1 --directory dist"
+  },
+  "engines": {"node": ">=22"}
+}

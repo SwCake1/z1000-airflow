@@ -1,0 +1,94 @@
+{
+  "model_revision": "male-athletic-v2",
+  "message": "Для ещё не готовых сценариев выполняется расчёт.",
+  "scenarios": {
+    "30_with": {
+      "status": "ready",
+      "file": "/results/30_with.json"
+    },
+    "30_without": {
+      "status": "ready",
+      "file": "/results/30_without.json"
+    },
+    "40_with": {
+      "status": "ready",
+      "file": "/results/40_with.json"
+    },
+    "40_without": {
+      "status": "ready",
+      "file": "/results/40_without.json"
+    },
+    "50_with": {
+      "status": "ready",
+      "file": "/results/50_with.json"
+    },
+    "50_without": {
+      "status": "ready",
+      "file": "/results/50_without.json"
+    },
+    "60_with": {
+      "status": "ready",
+      "file": "/results/60_with.json"
+    },
+    "60_without": {
+      "status": "ready",
+      "file": "/results/60_without.json"
+    },
+    "70_with": {
+      "status": "ready",
+      "file": "/results/70_with.json"
+    },
+    "70_without": {
+      "status": "ready",
+      "file": "/results/70_without.json"
+    },
+    "80_with": {
+      "status": "ready",
+      "file": "/results/80_with.json"
+    },
+    "80_without": {
+      "status": "ready",
+      "file": "/results/80_without.json"
+    },
+    "30_rack": {
+      "status": "ready",
+      "file": "/results/30_rack.json"
+    },
+    "40_rack": {
+      "status": "ready",
+      "file": "/results/40_rack.json"
+    },
+    "50_rack": {
+      "status": "ready",
+      "file": "/results/50_rack.json"
+    },
+    "60_rack": {
+      "status": "ready",
+      "file": "/results/60_rack.json"
+    },
+    "70_rack": {
+      "status": "ready",
+      "file": "/results/70_rack.json"
+    },
+    "80_rack": {
+      "status": "ready",
+      "file": "/results/80_rack.json"
+    }
+  },
+  "updated_at_ns": 1793254765665927401,
+  "blocked_case_suffixes": [],
+  "required_scenario_geometry": {
+    "30_without": "full-luggage-removed-v1",
+    "40_without": "full-luggage-removed-v1",
+    "50_without": "full-luggage-removed-v1",
+    "60_without": "full-luggage-removed-v1",
+    "70_without": "full-luggage-removed-v1",
+    "80_without": "full-luggage-removed-v1",
+    "30_rack": "rack-only-v1",
+    "40_rack": "rack-only-v1",
+    "50_rack": "rack-only-v1",
+    "60_rack": "rack-only-v1",
+    "70_rack": "rack-only-v1",
+    "80_rack": "rack-only-v1"
+  }
+}
