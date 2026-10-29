@@ -12,11 +12,15 @@
   <div class="view-note">Потяни, чтобы вращать · прокрути, чтобы приблизить</div>
  </section>
  <aside>
-  <nav class="page-nav" aria-label="Раздел проекта"><a href="../">Мотоцикл</a><a href="./" aria-current="page">Воздух и выхлоп</a></nav>
+  <nav class="page-nav" aria-label="Раздел проекта"><a href="./" aria-current="page">Воздух и выхлоп</a><a href="../motorcycle.html">Мотоцикл</a></nav>
   <div class="section"><span class="eyebrow">СЦЕНАРИЙ</span><div class="speed"><strong id="speed-value">60</strong><span>км/ч</span></div>
    <div id="speeds" class="speeds" role="group" aria-label="Скорость движения"></div>
-   <label class="luggage-label" for="luggage">Багажная система</label>
-   <select id="luggage"><option value="with">Кофр с площадкой и дугами</option><option value="rack">Только площадка и дуги</option><option value="without">Без кофра и крепления</option></select>
+   <div class="luggage-label" id="luggage-label">Багажная система</div>
+   <div id="luggage" role="group" aria-labelledby="luggage-label">
+    <button type="button" data-luggage="with" aria-pressed="true" title="Кофр с площадкой и дугами">С кофром</button>
+    <button type="button" data-luggage="rack" aria-pressed="false" title="Только площадка и дуги, без кофра">С площадкой</button>
+    <button type="button" data-luggage="without" aria-pressed="false" title="Без кофра, площадки и дуг">Без крепления</button>
+   </div>
    <p class="small">Прямолинейное движение · без бокового ветра</p>
   </div>
   <div class="section"><span class="eyebrow">ОТОБРАЖЕНИЕ</span>

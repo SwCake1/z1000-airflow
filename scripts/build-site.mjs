@@ -7,7 +7,7 @@ const output=join(root,'dist');
 const speeds=[30,40,50,60,70,80];
 // Only this explicit list is published. Never copy the project directory wholesale.
 const files=[
- 'index.html','model-viewer.js','simulation/project.css','THIRD_PARTY_NOTICES.md',
+ 'index.html','motorcycle.html','model-viewer.js','simulation/project.css','THIRD_PARTY_NOTICES.md',
  'models/v2/kawasaki-z1000-2008-refined.glb',
  'models/v2/kawasaki-z1000-2008-refined.usdz',
  'models/v2/model-specifications-v2.json',
