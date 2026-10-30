@@ -16,7 +16,7 @@ function setView(name){camera.position.copy(center).add(new THREE.Vector3(...vie
 setView('overview');
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setView(b.dataset.view));
 document.getElementById('rotate').onchange=e=>{controls.autoRotate=e.target.checked;};
-new GLTFLoader().load('./models/v2/kawasaki-z1000-2008-refined.glb',gltf=>{
+new GLTFLoader().load('./models/v2/kawasaki-z1000-2008-refined.glb?v=plate-blurred-v1',gltf=>{
  model=gltf.scene;scene.add(model);const bounds=new THREE.Box3().setFromObject(model);center=bounds.getCenter(new THREE.Vector3());floor.position.y=bounds.min.y-.01;setView('overview');loading.classList.add('hidden');
 },event=>{if(event.total)loading.textContent=`Загружаю модель · ${Math.round(100*event.loaded/event.total)}%`;},error=>{loading.textContent='Не удалось загрузить модель. Попробуй обновить страницу.';console.error(error);});
 new ResizeObserver(()=>{const {width,height}=canvas.getBoundingClientRect();renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();}).observe(canvas);

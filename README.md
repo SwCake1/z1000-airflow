@@ -26,8 +26,8 @@ The viewer uses 18 precomputed scenarios, so no simulation software is needed to
 
 | Model | View on a Mac | Use in a 3D editor |
 | --- | --- | --- |
-| Motorcycle | [Download USDZ](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.usdz) | [Download GLB](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.glb) |
-| Motorcycle with both riders | [Download USDZ](https://swcake1.github.io/z1000-airflow/simulation/z1000-two-riders.usdz) | [Download GLB](https://swcake1.github.io/z1000-airflow/simulation/assets/riding.glb) |
+| Motorcycle | [Download USDZ](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.usdz?v=plate-blurred-v1) | [Download GLB](https://swcake1.github.io/z1000-airflow/models/v2/kawasaki-z1000-2008-refined.glb?v=plate-blurred-v1) |
+| Motorcycle with both riders | [Download USDZ](https://swcake1.github.io/z1000-airflow/simulation/z1000-two-riders.usdz?v=plate-blurred-v1) | [Download GLB](https://swcake1.github.io/z1000-airflow/simulation/assets/riding.glb?v=plate-blurred-v1) |
 
 On a Mac, download a **USDZ** file, select it in Finder and press **Space** to open Quick Look. Textures are included in all model files.
 
